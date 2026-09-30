@@ -27,6 +27,8 @@
   --color-blue-700: var(--color-brass);
   --color-teal-300: var(--color-spark);
   --color-pink-500: var(--color-amber-light);
+
+  --font-display: var(--font-fraunces), Georgia, serif;
 }
 
 @layer base {
