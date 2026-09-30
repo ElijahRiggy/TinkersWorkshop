@@ -1,8 +1,5 @@
 import Link from "next/link";
 
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1685320198649-781e83a61de4?q=80&w=2400&auto=format&fit=crop";
-
 const TRUST_ITEMS = [
   "Secure checkout",
   "Small-batch & curated",
@@ -11,14 +8,21 @@ const TRUST_ITEMS = [
 
 export function Hero() {
   return (
-    <section className="relative mx-auto flex min-h-[560px] w-full max-w-(--breakpoint-2xl) flex-col items-center justify-center overflow-hidden md:h-[85vh] md:min-h-[620px]">
-      <img
-        src={HERO_IMAGE}
-        alt="Warm, well-worn woodworking tools laid out on a workbench"
-        className="absolute inset-0 h-full w-full object-cover"
+    <section className="relative mx-auto flex min-h-[520px] w-full max-w-(--breakpoint-2xl) flex-col items-center justify-center overflow-hidden bg-ink">
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(60% 60% at 50% 30%, rgba(201,130,42,0.16), transparent 70%)",
+        }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/20" />
-      <div className="absolute inset-0 bg-ink/10" />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(45deg, var(--color-cream) 0, var(--color-cream) 1px, transparent 1px, transparent 14px)",
+        }}
+      />
       <div className="relative z-10 flex flex-col items-center gap-6 px-6 py-24 text-center">
         <p className="text-xs font-semibold tracking-[0.3em] text-amber-300 uppercase">
           Toys &amp; games for teens and adults

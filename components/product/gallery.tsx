@@ -31,8 +31,8 @@ export function Gallery({
 
   return (
     <form>
-      <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden">
-        {images[imageIndex] && (
+      <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden rounded-xl bg-gradient-to-br from-ink-2 to-ink-3">
+        {images[imageIndex] ? (
           <Image
             className="h-full w-full object-contain"
             fill
@@ -41,6 +41,12 @@ export function Gallery({
             src={images[imageIndex]?.src as string}
             priority={true}
           />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center">
+            <span className="font-display text-6xl font-semibold text-brass-light/40">
+              ?
+            </span>
+          </div>
         )}
 
         {images.length > 1 ? (

@@ -129,20 +129,30 @@ export default function CartModal() {
                                 />
                               </div>
                               <div className="flex flex-row">
-                                <div className="relative h-16 w-16 overflow-hidden rounded-md border border-neutral-300 bg-neutral-300 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:bg-neutral-800">
-                                  <Image
-                                    className="h-full w-full object-cover"
-                                    width={64}
-                                    height={64}
-                                    alt={
-                                      item.merchandise.product.featuredImage
-                                        .altText ||
-                                      item.merchandise.product.title
-                                    }
-                                    src={
-                                      item.merchandise.product.featuredImage.url
-                                    }
-                                  />
+                                <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-md border border-ink-3 bg-gradient-to-br from-ink-2 to-ink-3">
+                                  {item.merchandise.product.featuredImage ? (
+                                    <Image
+                                      className="h-full w-full object-cover"
+                                      width={64}
+                                      height={64}
+                                      alt={
+                                        item.merchandise.product.featuredImage
+                                          .altText ||
+                                        item.merchandise.product.title
+                                      }
+                                      src={
+                                        item.merchandise.product.featuredImage
+                                          .url
+                                      }
+                                    />
+                                  ) : (
+                                    <span className="font-display text-lg font-semibold text-brass-light/50">
+                                      {item.merchandise.product.title
+                                        .trim()
+                                        .charAt(0)
+                                        .toUpperCase()}
+                                    </span>
+                                  )}
                                 </div>
                                 <Link
                                   href={merchandiseUrl}

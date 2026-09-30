@@ -36,7 +36,13 @@ export function GridTileImage({
           })}
           {...props}
         />
-      ) : null}
+      ) : (
+        <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-ink-2 to-ink-3">
+          <span className="font-display text-4xl font-semibold text-brass-light/50">
+            {(label?.title ?? props.alt ?? "?").trim().charAt(0).toUpperCase()}
+          </span>
+        </div>
+      )}
       {label ? (
         <Label
           title={label.title}
